@@ -9,11 +9,16 @@
 	@see http://wiki.seeed.cc/Grove_System/#interface-of-grove-modules
 */
 
-#ifndef GROVE_PINOUT
-#define GROVE_PINOUT
+#ifndef GROVEPINOUT
+#define GROVEPINOUT
 
 #include "GroveCommon.h"
 
+//! GrovePinout class, handles all data & logic for a module's pins
+/*!
+    Class is inherited by all abstract Grove* classes that are inherited by any other Grove** module
+    class.
+*/
 class GrovePinout
 {
 private:
@@ -64,5 +69,5 @@ public:
     int set(int pin, int val);
 };
 
-#endif //GROVE_PINOUT
+#endif //GROVEPINOUT
 

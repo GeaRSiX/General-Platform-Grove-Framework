@@ -2,7 +2,7 @@
     @file   GrovePinout.cpp
 	@author	Alexander Collins (alexander-collins@outlook.com)
 	@date	September 2017 - April 2018
-	@brief  The header file included in all grove modules that handles pin stuff
+	@brief  The source file included in all grove modules that handles pin stuff
 
 	@see http://wiki.seeed.cc/Grove_System/#interface-of-grove-modules
 */

@@ -5,12 +5,21 @@
 	@brief  Data common to all GroveDrivers files (error codes, etc)
 */
 
-#ifndef GROVEDRIVERS_COMMON
-#define GROVEDRIVERS_COMMON
+#ifndef GROVECOMMON
+#define GROVECOMMON
 
+//=========
+// GLOBALS
+//=========
 enum GroveCommon_ReturnCode {
     Success = 0,
     InvalidParam = 11
 };
 
-#endif //GROVEDRIVERS_COMMON
+//===========
+// FUNCTIONS
+//===========
+float GroveCommon_analogRead(int pin);
+int GroveCommon_digitalRead(int pin);
+
+#endif //GROVECOMMON
