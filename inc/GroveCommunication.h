@@ -10,8 +10,8 @@
     @see http://wiki.seeed.cc/Communication/
 */
 
-#ifndef GROVEMODULE
-#define GROVEMODULE
+#ifndef GROVECOMMUNICATION
+#define GROVECOMMUNICATION
 
 #include "GroveCommon.h"
 #include "GrovePinout.h"
@@ -69,4 +69,5 @@ public:
     virtual GroveCommon::ReturnCode write(char *buffer) = 0;
 };
 
-#endif  //GROVEMODULE
+#endif  //GROVECOMMUNICATION
+

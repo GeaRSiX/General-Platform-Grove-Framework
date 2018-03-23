@@ -16,7 +16,7 @@
 
 #include "GroveGPS.h"
 
-//@TODO big possibility of buffer overflow here
+//@TODO big possibility of buffer overflow here; test & fix
 GroveCommon::ReturnCode GroveGPS::read(char *buffer)
 {
     // throw away until we hit start-delimeter
@@ -37,7 +37,7 @@ GroveCommon::ReturnCode GroveGPS::read(char *buffer)
     return GroveCommon::ReturnCode::Success;
 }
 
-//@TODO error checking
+//@TODO error checking; test & fix
 GroveCommon::ReturnCode GroveGPS::write(char *buffer)
 {
     for (int i = 0; i < strlen(buffer)-1; i++)

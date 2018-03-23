@@ -10,5 +10,7 @@
 #include "GroveCommon.h"
 #include "GroveCommunication.h"
 #include "GroveGPS.h"
+#include "GroveActuator.h"
+#include "GroveSensor.h"
 
 #endif  //GROVEDRIVERS

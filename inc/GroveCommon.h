@@ -38,7 +38,7 @@ namespace GroveCommon
     };
 
     //! Maximum required size of a buffer that data is read into
-    const int BUFF_SIZE = 250;
+    const int BUFF_SIZE = 250;  /**< @todo Test this */
 
     //! Read analog value from pin
     /*!
@@ -68,6 +68,8 @@ namespace GroveCommon
     /*!
         The digital read function used by all Grove* classes that require digital read.
 
+        @param pin The pin to read a value from
+
         @note This function acts as a wrapper for the digitalRead function used by the specific 
         platform using this framework. Add whatever function is used to get a Digital read from 
         your platform to the source of this function.
@@ -79,6 +81,9 @@ namespace GroveCommon
     //! Write value to digital pin
     /*!
         The digital write function used by all Grove* classes that require digital write.
+
+        @param pin The pin to write value to
+        @param value The value to write to pin
 
         @note This function acts as a wrapper for the digitalRead function used by the specific 
         platform using this framework. Add whatever function is used to get an Analog read from 
@@ -107,7 +112,7 @@ namespace GroveCommon
         Writes a SINGLE byte of data from over UART
 
         @param tx_pin Pin that the module's UART TX is connected to
-        @param value The byte you want to transmit
+        @param byte The byte you want to transmit
 
         @note This function acts as a wrapper for the digitalRead function used by the specific 
         platform using this framework. Add whatever function is used to get an Analog read from 
@@ -119,3 +124,4 @@ namespace GroveCommon
 }
 
 #endif //GROVECOMMON
+
