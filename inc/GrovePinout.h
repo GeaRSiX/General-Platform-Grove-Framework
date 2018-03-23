@@ -28,45 +28,72 @@ public:
     //! Constructor
     /*! Creates an instance of GrovePinout
 
-            Not all grove modules require pin1 and pin2. For example, the Digital and 
-            Analog grove modules use pin1 and pin2 for the same purpose - others, such 
-            as UART and I2C use both though.
-        
-        @param pin1 The pin corresponding to pin1 (yellow cable) of the Grove Interface.
-        @param pin2 The pin corresponding to pin2 (white cable) of the Grove Interface.
-    */
-    GrovePinout(int pin1, int pin2)
-     : pin1(pin1), pin2(pin2) {};
+        Shouldn't be required by the user, this file is used by the Grove Abstract Base Classes to 
+        handle pin logic.
 
-    //! Constructor
-    /*! Creates an instance of GrovePinout
-
-            Not all grove modules require pin1 and pin2. For example, the Digital and 
-            Analog grove modules use pin1 and pin2 for the same purpose - others, such 
-            as UART and I2C use both though.
+        Not all grove modules require pin1 and pin2. For example, the Digital and Analog grove 
+        modules use pin1 and pin2 for the same purpose - others, such as UART and I2C use both 
+        though.
         
-        @param pin The pin corresponding to the pin being used.
+        @param pin The pin corresponding to pin1 (yellow cable) of the Grove module.
+
+        @see GroveSensor.h
+        @see GroveActuator.h
     */
     GrovePinout(int pin)
      : pin1(pin) {};
 
+    //! Constructor
+    /*! Creates an instance of GrovePinout
+
+        Shouldn't be required by the user, this file is used by the Grove Abstract Base Classes to 
+        handle pin logic.
+
+        Not all grove modules require pin1 and pin2. For example, the Digital and Analog grove 
+        modules use pin1 and pin2 for the same purpose - others, such as UART and I2C use both 
+        though.
+        
+        @param pin1 The pin corresponding to pin1 (yellow cable) of the Grove module.
+        @param pin2 The pin corresponding to pin2 (white cable) of the Grove module.
+
+        @see GroveCommunication.h
+    */
+    GrovePinout(int pin1, int pin2)
+     : pin1(pin1), pin2(pin2) {};
+
+    //! Get pin1's value
+    /*!
+        This function returns the value of pin1 (it's a shorthand in the case that you used the single-
+        pin constructor).
+
+        @return The value of pin1
+    */
+    int get();
+
     //! Get a pin's value
     /*!
+        If an invalid pin parameter is passed the function does nothing.
+
         @param pin Pin to retrieve the value of (1 or 2)
 
-        @return Common_ReturnCodes::InvalidParam if pin is not a valid parameter (1 or 2)
+        @return The value of pin
     */
     int get(int pin);
 
+    //! Set a pin1's value
+    /*!
+        @param val Value to set pin1 to
+    */
+    void set(int val);
+
     //! Set a pin's value
     /*!
+        If an invalid pin value is given the function does nothing.
+
         @param pin Pin to set the value of (1 or 2)
         @param val Value to set pin to
-
-        @return Common_ReturnCodes::Success if val was set to pin successfully
-        @return Common_ReturnCodes::InvalidParam if pin is not a valid parameter (1 or 2)
     */
-    int set(int pin, int val);
+    void set(int pin, int val);
 };
 
 #endif //GROVEPINOUT

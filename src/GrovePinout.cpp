@@ -9,6 +9,11 @@
 
 #include "GrovePinout.h"
 
+int GrovePinout::get()
+{
+    return pin1;
+}
+
 int GrovePinout::get(int pin)
 {
     switch(pin)
@@ -16,21 +21,22 @@ int GrovePinout::get(int pin)
         case 1: return pin1;    break;
         case 2: return pin2;    break;
         default:
-            return GroveCommon_ReturnCode::InvalidParam;
             break;
     }
 }
 
-int GrovePinout::set(int pin, int val)
+void GrovePinout::set(int val)
+{
+    pin1 = val;
+}
+
+void GrovePinout::set(int pin, int val)
 {
     switch(pin)
     {
-        case 1: pin1 = val; break;
-        case 2: pin2 = val; break;
+        case 1: pin1 = val;     break;
+        case 2: pin2 = val;     break;
         default:
-            return GroveCommon_ReturnCode::InvalidParam;
             break;
     }
-
-    return GroveCommon_ReturnCode::Success;
 }
