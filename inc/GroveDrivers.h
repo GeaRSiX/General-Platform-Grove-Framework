@@ -7,10 +7,22 @@
 #ifndef GROVEDRIVERS
 #define GROVEDRIVERS
 
+//common
 #include "GroveCommon.h"
+#include "GrovePinout.h"
+//communication
 #include "GroveCommunication.h"
 #include "GroveGPS.h"
+//actuators
 #include "GroveActuator.h"
+#include "GroveButton.h"
+#include "GroveLED.h"
+#include "GroveBuzzer.h"
+//sensors
 #include "GroveSensor.h"
+#include "GroveLight.h"
+#include "GroveSound.h"
+#include "GroveTemperature.h"
+#include "GroveTouch.h"
 
 #endif  //GROVEDRIVERS
