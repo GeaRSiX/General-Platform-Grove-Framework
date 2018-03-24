@@ -39,7 +39,7 @@ namespace GroveCommon
     };
 
     //! Maximum required size of a buffer that data is read into
-    const int BUFF_SIZE = 250;  /**< @todo Test this */
+    const int MAX_BUFF = 250;  /**< @todo Test this */
 
     //! Read analog value from pin
     /*!

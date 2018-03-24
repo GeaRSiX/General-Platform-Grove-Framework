@@ -16,15 +16,15 @@
 
 #include "GroveGPS.h"
 
-//@TODO big possibility of buffer overflow here; test & fix
+//@todo big possibility of buffer overflow here; test & fix
 GroveCommon::ReturnCode GroveGPS::read(char *buffer)
 {
     // throw away until we hit start-delimeter
     while (buffer[0] != '$')
         buffer[0] = GroveCommon::uartRead(pinout.get(2));
 
-    // fill buffer until BUFF_SIZE or end-delimeter
-    for (int i = 1; i < GroveCommon::BUFF_SIZE; i++)
+    // fill buffer until MAX_BUFF or end-delimeter
+    for (int i = 1; i < GroveCommon::MAX_BUFF; i++)
     {
         buffer[i] = GroveCommon::uartRead(pinout.get(2));
 
@@ -37,7 +37,7 @@ GroveCommon::ReturnCode GroveGPS::read(char *buffer)
     return GroveCommon::ReturnCode::Success;
 }
 
-//@TODO error checking; test & fix
+//@todo error checking; test & fix
 GroveCommon::ReturnCode GroveGPS::write(char *buffer)
 {
     for (int i = 0; i < strlen(buffer)-1; i++)

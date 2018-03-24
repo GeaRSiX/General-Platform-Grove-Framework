@@ -48,7 +48,7 @@ public:
         The read function will read a string into buffer.
 
         @param buffer The buffer that data read from the module will be stored in. Should have at 
-        least GroveCommon::BUFF_SIZE bytes allocated to it.
+        least GroveCommon::MAX_BUFF bytes allocated to it.
 
         @return GroveCommon::ReturnCode indicates the success of the function.
 
