@@ -14,7 +14,7 @@
 
 float GroveButton::read()
 {
-    return (float)GroveCommon::digitalRead(pinout.get());
+    return GroveCommon::digitalRead(pinout.get());
 }
 
 GroveCommon::ReturnCode GroveButton::write(float value)
