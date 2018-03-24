@@ -34,6 +34,7 @@ namespace GroveCommon
     //! Return codes used by all Grove* classes
     enum class ReturnCode {
         Success,        /**< Successful return */
+        InvalidPin,     /**< Attempted to read from an invalid pin */
         InvalidParam    /**< Invalid parameter passed to function */
     };
 
