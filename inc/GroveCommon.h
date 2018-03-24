@@ -31,6 +31,9 @@
 */
 namespace GroveCommon
 {
+    //! Pointer to the MicroBit instance being used to communicate with hardware
+    extern MicroBit *mBit;
+
     //! Return codes used by all Grove* classes
     enum class ReturnCode {
         Success,        /**< Successful return */
