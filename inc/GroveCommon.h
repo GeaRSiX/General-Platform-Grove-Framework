@@ -110,7 +110,7 @@ namespace GroveCommon
 
         @return uint8_t the byte of data read via uart
    */
-   uint8_t uartRead();
+   uint8_t uartRead(int rx_pin);
 
    //! Write a byte of data over UART
    /*!
@@ -125,7 +125,7 @@ namespace GroveCommon
 
         @return int up to the user (if unsure, return 0 or a GroveCommon::ReturnCode)
    */
-   uint8_t uartWrite(uint8_t byte);
+   uint8_t uartWrite(int tx_pin, uint8_t byte);
 }
 
 #endif //GROVECOMMON

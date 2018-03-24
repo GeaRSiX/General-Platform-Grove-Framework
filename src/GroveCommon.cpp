@@ -144,12 +144,12 @@ namespace GroveCommon
         }
     }
  
-    uint8_t uartRead()
+    uint8_t uartRead(int rx_pin)
     {
         return mBit->serial.read(ASYNC);
     }
 
-    uint8_t uartWrite(uint8_t byte)
+    uint8_t uartWrite(int tx_pin, uint8_t byte)
     {
         return mBit->serial.sendChar((char)byte);
     }
