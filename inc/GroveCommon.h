@@ -13,6 +13,7 @@
 #define GROVECOMMON
 
 #include <cstdint>
+#include "MicroBit.h"
 
 //! Namespace that contains all the data & functions common to files in this framework
 /*!
@@ -31,7 +32,7 @@
 */
 namespace GroveCommon
 {
-    //! Pointer to the MicroBit instance being used to communicate with hardware
+    //! Pointer to the MicroBitinstance being used to communicate with hardware
     extern MicroBit *mBit;
 
     //! Return codes used by all Grove* classes
@@ -109,7 +110,7 @@ namespace GroveCommon
 
         @return uint8_t the byte of data read via uart
    */
-   uint8_t uartRead(int rx_pin);
+   uint8_t uartRead();
 
    //! Write a byte of data over UART
    /*!
@@ -124,7 +125,7 @@ namespace GroveCommon
 
         @return int up to the user (if unsure, return 0 or a GroveCommon::ReturnCode)
    */
-   uint8_t uartWrite(int tx_pin, uint8_t byte);
+   uint8_t uartWrite(uint8_t byte);
 }
 
 #endif //GROVECOMMON
