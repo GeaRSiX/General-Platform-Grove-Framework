@@ -17,7 +17,7 @@ float GroveRotaryAngle::read()
 {
     int raw = GroveCommon::analogRead(pinout.get());
     float vcc = (float)raw * (ADC_REF/1023);
-    float degrees = (vcc * MAX_DEGREE) / vcc;
+    float degrees = (vcc * MAX_DEGREE) / ADC_REF;
 
     return degrees;
 }
