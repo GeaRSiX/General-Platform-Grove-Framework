@@ -31,7 +31,7 @@ _To see module functionality, just look at the _Abstract Base Classes_ (ABC's) s
 
 ### Supported Grove Modules
 | Module | Constructor |
-|---|
+|---|---|
 |**Actuators**|```GroveActuator(int pin)```|
 |[Grove Button](http://wiki.seeed.cc/Grove-Button/)|```GroveButton(int pin)```|
 |[Grove Buzzer](http://wiki.seeed.cc/Grove-Buzzer/)|```GroveBuzzer(int pin)```|
