@@ -83,6 +83,10 @@ In the ```module.json``` of you yotta module, just add:
 "grove-module-library": "https://github.com/GeaRSiX/General-Platform-Grove-Framework.git#platform/mbit"
 ```
 In ```"dependencies": { }```
+
+**The above method currently isn't working due to yotta's ~~stupid~~ cmake build process.** Instead, do the following:
+```git clone -b platform/mbit https://github.com/GeaRSiX/General-Platform-Grove-Framework/``` and copy all the headers & source files into your yotta module's source directory.
+
 ### Usage
 1. Add ```#include "GroveDrivers.h"``` to the top of your main.cpp
 2. After you've initialised your MicroBit object wil .init(), set the GroveCommon's MicroBit pointer to your MicroBit: ```GroveCommon::mBit = &uBit``` (I usually name the MicroBit object in my main.cpp uBit).
