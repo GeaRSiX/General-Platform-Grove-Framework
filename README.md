@@ -1,6 +1,7 @@
 # General-Platform Grove Framework
+## BBC Micro:Bit branch
 A non-platform-specific embedded C++ framework for using seeed's Grove modules.
-**Specifc platforms are supported on seperate branches!**
+**This branch provides support for the BBC Micro:Bit**
 
 ## Contents
 1. Overview
@@ -60,6 +61,19 @@ int main()
     }
 }
 ```
+
+### BBC Micro:Bit usage
+I've set this up so you can just import it to your BBC Micro:Bit yotta project as a yotta_module.
+#### Install
+In the ```module.json``` of you yotta module, just add:
+```
+"grove-module-library": "https://github.com/GeaRSiX/General-Platform-Grove-Framework.git"
+```
+In ```"dependencies": { }```
+### Usage
+1. Add ```#include "GroveDrivers.h"``` to the top of your main.cpp
+2. After you've initialised your MicroBit object wil .init(), set the GroveCommon's MicroBit pointer to your MicroBit: ```GroveCommon::mBit = &uBit``` (I usually name the MicroBit object in my main.cpp uBit).
+3. Good to go! See General above for details on using the modules.
 
 ## Supported Platforms
 ### BBC Micro:Bit
