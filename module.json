@@ -1,0 +1,13 @@
+{
+  "name": "grove-module-library",
+  "version": "1.0.0",
+  "description": "A framework for using Grove Modules. MicroBit branch.",
+  "author": "Alexander Collins",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+  "extraIncludes": [
+    "inc/"
+  ]
+}
