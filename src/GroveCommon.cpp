@@ -24,14 +24,14 @@ namespace GroveCommon
     #endif
     }
 
-    int analogWrite(int pin, float value)
+    int analogWrite(int pin, uint8_t value)
     {
     #ifndef DEBUG
        #error "This function is platform-specific and requires implementing"
     #endif
     }
 
-    int digitalWrite(int pin, int value)
+    int digitalWrite(int pin, uint8_t value)
     {
     #ifndef DEBUG
        #error "This function is platform-specific and requires implementing"

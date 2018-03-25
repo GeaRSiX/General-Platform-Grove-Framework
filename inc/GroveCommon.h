@@ -63,7 +63,7 @@ namespace GroveCommon
 
         @return int up to the user (if unsure, return 0 or a GroveCommon::ReturnCode)
     */
-   int analogWrite(int pin, float value);
+   int analogWrite(int pin, uint8_t value);
 
     //! Read digital value from pin
     /*!
@@ -92,7 +92,7 @@ namespace GroveCommon
 
         @return int up to the user (if unsure, return 0 or a GroveCommon::ReturnCode)
     */
-   int digitalWrite(int pin, int value);
+   int digitalWrite(int pin, uint8_t value);
 
    //! Read a byte of data over UART
    /*!
