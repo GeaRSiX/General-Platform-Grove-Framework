@@ -30,7 +30,20 @@ Individual modules then inherit from one of these ABCs, depending upon their typ
 _To see module functionality, just look at the _Abstract Base Classes_ (ABC's) since each module is requried to implement these._
 
 ### Supported Grove Modules
-**TODO: add a list of the module->type mapping here**
+| Module | Constructor |
+|---|
+|**Actuators**|```GroveActuator(int pin)```|
+|[Grove Button](http://wiki.seeed.cc/Grove-Button/)|```GroveButton(int pin)```|
+|[Grove Buzzer](http://wiki.seeed.cc/Grove-Buzzer/)|```GroveBuzzer(int pin)```|
+|[Grove LED](http://wiki.seeed.cc/Grove-Variable_Color_LED/)|```GroveLED(int pin)```|
+|**Sensors**|```GroveSensor(int pin)```|
+|[Grove Temperature](http://wiki.seeed.cc/Grove-Temperature_Sensor/)/[Grove Temperature V1.2](http://wiki.seeed.cc/Grove-Temperature_Sensor_V1.2/)|```GroveTemperature(int pin)```|
+|[Grove Touch](http://wiki.seeed.cc/Grove-Touch_Sensor/)|```GroveTouch(int pin)```|
+|[Grove Light](http://wiki.seeed.cc/Grove-Light_Sensor/)|```GroveLight(int pin)```|
+|[Grove Rotary Angle](http://wiki.seeed.cc/Grove-Rotary_Angle_Sensor/)|```GroveRotaryAngle(int pin)```|
+|[Grove Sound](http://wiki,seeed.cc/Grove-Sound/)|```GroveSound(int pin)```|
+|**Communication**|```GroveCommunication(int pin1_rx, int pin2_tx)```|
+|[Grove GPS](http://wiki.seeed.cc/Grove-GPS/)|```GroveGPS(int rx, int tx)```|
 
 ## Usage
 This is obviously going to depend on your platform.
