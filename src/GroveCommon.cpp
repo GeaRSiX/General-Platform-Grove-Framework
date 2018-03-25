@@ -146,7 +146,12 @@ namespace GroveCommon
  
     uint8_t uartRead(int rx_pin)
     {
-        return mBit->serial.read(ASYNC);
+        // microbit ASYNC serial reads give out 0x0C a load?
+        uint8_t byte = 0x0C;
+        while (byte == 0x0C)
+            byte = mBit->serial.read(ASYNC);
+
+        return byte;
     }
 
     uint8_t uartWrite(int tx_pin, uint8_t byte)
