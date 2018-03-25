@@ -80,7 +80,7 @@ I've set this up so you can just import it to your BBC Micro:Bit yotta project a
 #### Install
 In the ```module.json``` of you yotta module, just add:
 ```
-"grove-module-library": "https://github.com/GeaRSiX/General-Platform-Grove-Framework.git"
+"grove-module-library": "https://github.com/GeaRSiX/General-Platform-Grove-Framework.git#platform/mbit"
 ```
 In ```"dependencies": { }```
 ### Usage
