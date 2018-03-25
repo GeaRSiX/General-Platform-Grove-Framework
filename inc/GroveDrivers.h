@@ -24,5 +24,6 @@
 #include "GroveSound.h"
 #include "GroveTemperature.h"
 #include "GroveTouch.h"
+#include "GroveRotaryAngle.h"
 
 #endif  //GROVEDRIVERS
