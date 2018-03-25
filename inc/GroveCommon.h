@@ -55,7 +55,7 @@ namespace GroveCommon
 
         @return float read analog value
     */
-   float analogRead(int pin);
+   int analogRead(int pin);
 
     //! Write value to analog pin
     /*!

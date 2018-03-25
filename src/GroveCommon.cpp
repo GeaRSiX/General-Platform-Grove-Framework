@@ -12,7 +12,7 @@ namespace GroveCommon
 {
     MicroBit *mBit;
 
-    float analogRead(int pin)
+    int analogRead(int pin)
     {
         switch(pin)
         {
