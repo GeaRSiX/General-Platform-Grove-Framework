@@ -29,6 +29,7 @@ Individual modules then inherit from one of these ABCs, depending upon their typ
 
 _To see module functionality, just look at the _Abstract Base Classes_ (ABC's) since each module is requried to implement these._
 
+### Supported Grove Modules
 **TODO: add a list of the module->type mapping here**
 
 ## Usage
@@ -38,7 +39,27 @@ See specific-branch README's for usage on specific platforms (**5. Supported Pla
 
 If your platform isn't supported, see **6. Adding Platform Support**.
 
+### General
 The general-usage stuff (found in GroveCommon) can be called by calling the namespace first: ```GroveCommon::*```, where the * is the variable/function you want to call. Generally you won't need to do this aside from using the ```MAX_BUFF``` variable and ```ReturnCode``` enum.
+
+The individual modules can be called by first declaring an object of your target module. To see the available modules, see **Framework Documentation/Supported Grove Modules**. The functions each module can perform can be viewed in the ABC classes (see **Framework Documentation** for details).
+
+#### example
+```
+#include "GroveDrivers.h"
+
+#define PIN1	1
+
+GroveButton button(PIN1);
+
+int main()
+{
+	while (1)
+    {
+    	printf("%i", (int)button.read());	//prints 1 if the button is pressed, else 0
+    }
+}
+```
 
 ## Supported Platforms
 ### BBC Micro:Bit
