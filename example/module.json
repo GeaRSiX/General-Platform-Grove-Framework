@@ -1,0 +1,11 @@
+{
+  "name": "grove-framework-demo",
+  "version": "1.0.0",
+  "description": "A demo for Grove Framework",
+  "author": "Alexander Collins",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+  "bin": "./src"
+}

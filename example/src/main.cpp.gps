@@ -1,0 +1,95 @@
+//========
+// MACROS
+//========
+//includes
+#include "MicroBit.h"
+#include "grove-drivers/GroveDrivers.h"
+//defines
+#define GPSTX     MICROBIT_PIN_P0
+#define GPSRX     MICROBIT_PIN_P1
+
+//=========
+// GLOBALS
+//=========
+//microbit
+MicroBit uBit;
+//grove
+GroveGPS GPS(GPSRX, GPSTX);
+//general
+char buffer[GroveCommon::MAX_BUFF];
+char GPGGA[GroveCommon::MAX_BUFF];
+//char GPGLL
+
+//============
+// PROTOTYPES
+//============
+void init();
+void exit();
+void configureSerial(PinName TX, PinName RX, int baud);
+void debugPrint(const char *buffer, bool printHex);
+
+//======
+// MAIN
+//======
+int main()
+{
+//init mbit
+    init();
+    GroveCommon::mBit = &uBit;
+
+//read
+    while (1) {
+        configureSerial(GPSTX, GPSRX, 9600);
+        
+        memset(buffer, '\0', GroveCommon::MAX_BUFF);
+        GPS.read(buffer);
+
+        configureSerial(USBTX, USBRX, 115200);
+        debugPrint(buffer, false);
+    }
+
+//exit
+    exit();
+    return EXIT_SUCCESS;
+}
+
+//===========
+// FUNCTIONS
+//===========
+void init()
+{
+    // init MicroBit
+    uBit.init();
+    // print ready messages
+    uBit.serial.printf("RDY\r\n");
+    uBit.display.scroll("RDY", 50);
+}
+
+
+void exit()
+{
+    // print gdbye messages
+    uBit.serial.printf("BYE\r\n");
+    uBit.display.scroll("BYE", 50);
+    // exit MicroBit
+    release_fiber();
+}
+
+void configureSerial(PinName TX, PinName RX, int baud)
+{
+    uBit.serial.baud(baud);
+    uBit.serial.redirect(TX, RX);
+}
+
+void debugPrint(const char *buffer, bool printHex)
+{
+    uBit.serial.printf("%s", buffer);
+    uBit.serial.printf("\r\n");
+    if (printHex)
+    {
+        for (size_t i = 0; i < GroveCommon::MAX_BUFF; i++)
+            uBit.serial.printf("%02x ", buffer[i]);
+        uBit.serial.printf("\r\n");
+    }
+}
+
